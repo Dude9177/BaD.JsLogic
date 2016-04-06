@@ -1,0 +1,27 @@
+{
+  "name": "BaD.JsLogic",
+  "authors": [
+    "Rene Heindl <Rene.Heindl@goeg.at>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flag-css": "^0.0.5",
+    "knockout": "^3.4.0",
+    "knockout.punches":"^0.5.1",
+    "requirejs": "^2.2.0" 
+  }
+}

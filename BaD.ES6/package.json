@@ -1,0 +1,29 @@
+{
+  "name": "bad.es6",
+  "version": "1.0.0",
+  "description": "Bet and Drink 2016 - ES6 Version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "René Philipp Heindl",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jspm-build": "0.0.15",
+    "jspm": "^0.16.32"
+  },
+  "jspm": {
+    "dependencies": {
+      "es6-enum": "npm:es6-enum@^1.0.3",
+      "knockout/knockout": "github:knockout/knockout@^3.4.0",
+      "lipis/flag-icon-css": "github:lipis/flag-icon-css@^1.4.0",
+      "necolas/normalize.css": "github:necolas/normalize.css@^4.0.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

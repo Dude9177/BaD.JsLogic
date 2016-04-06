@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Bet and Drink 2016</title>
+    <meta charset="utf-8" />
+    <link href="bower_components/flag-css/dist/flag-css.min.css" rel="stylesheet" />
+    <style>
+      .clearfix:after {
+        content: ".";
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+      }
+    </style>
+</head>
+
+<body>
+    <h1>Debug</h1>
+
+    <div style="display: none;" data-bind="visible: true">
+        <div data-bind="foreach: groupsIterator">
+            <h2>{{name}}</h2>
+            <div class="clearfix">
+                <div style="float: left; width: 400px">
+                    <div data-bind="foreach: groupGames">
+                        <div data-bind="with: new GroupGameResultInput($data)" <h3>{{groupGame.name}}</h3>
+                            <div>
+                                {{groupGame.homeTeam.name}} <i class="flag flag-{{groupGame.homeTeam.shortName.toLowerCase()}}"></i>
+                                <select data-bind="options: goalsSelection, value: goalsHomeTeam, valueAllowUnset: true"></select>
+                                :
+                                <select data-bind="options: goalsSelection, value: goalsAwayTeam, valueAllowUnset: true"></select>
+                                {{groupGame.awayTeam.name}} <i class="flag flag-{{groupGame.awayTeam.shortName.toLowerCase()}}"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:inline-block: width: 50%">
+                  <table style="width: 500px">
+                    <thead>
+                      <tr>
+                        <th style="text-align: left">Pl.</th>
+                        <th style="text-align: left">Land</th>
+                        <th>Sp.</th>
+                        <th>S</th>
+                        <th>U</th>
+                        <th>N</th>
+                        <th>Tore</th>
+                        <th>Diff.</th>
+                        <th>Punkte</th>
+                      </tr>
+                    </thead>
+                    <tbody data-bind="foreach: groupTeams">
+                      <tr>
+                        <td>{{$index()+1}}</td>
+                        <td>{{team.name}} <i class="flag flag-{{team.shortName.toLowerCase()}}"></i></td>
+                        <td style="text-align: center">{{gamesPlayed}}</td>
+                        <td style="text-align: center">{{gamesWon}}</td>
+                        <td style="text-align: center">{{gamesTie}}</td>
+                        <td style="text-align: center">{{gamesLost}}</td>
+                        <td style="text-align: center">{{goalsFormatted}}</td>
+                        <td style="text-align: center">{{goalsDiff}}</td>
+                        <td style="text-align: center">{{points}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+        <script src="bower_components/knockout/dist/knockout.js"></script>
+        <script src="bower_components/knockout.punches/knockout.punches.min.js"></script>
+        <script src="scripts/_singletons.js"></script>
+        <script src="scripts/_methods.js"></script>
+        <script src="scripts/_inputs.js"></script>
+
+        /* ES6 TEST */
+        <script data-main="dist/temp/app.js" src="bower_components/requirejs/require.js"></script>
+        /* */
+
+        <script type="text/javascript">
+            ko.punches.enableAll()
+            var tournament = new Tournament()
+            ko.applyBindings(tournament)
+        </script>
+</body>
+
+</html>
